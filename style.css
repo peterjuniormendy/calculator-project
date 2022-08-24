@@ -1,0 +1,134 @@
+:root {
+  --secondary: #d3cbcc;
+  --secondary-dark: #280039;
+}
+body {
+  background: #3b4664 !important;
+}
+.wrapper {
+  max-width: 550px;
+  height: auto;
+  margin: 100px auto;
+}
+.bg-theme {
+  background: #252c45;
+}
+.h-20 {
+  height: 20px !important;
+}
+.h-16 {
+  height: 16px !important;
+}
+.screen-h {
+  min-height: 150px !important;
+}
+.w-16 {
+  width: 16px !important;
+}
+.fs-7 {
+  font-size: 0.85rem !important;
+}
+.letter-spacing {
+  letter-spacing: 0.5rem;
+}
+
+.hideResult {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.showResult {
+  transform: translateY(0) !important;
+  opacity: 1;
+}
+.defaultThemeSpace {
+  transform: translateX(2px) !important;
+  background-color: red;
+}
+.transitions {
+  transition: all 0.3s linear !important;
+}
+/* Light Theme Custom class*/
+.light {
+  background-color: #e5e5e5 !important;
+}
+.themeToggle-l-bg {
+  background-color: var(--secondary) !important;
+  transform: translateX(22px) !important;
+}
+.screen-l-bg {
+  background-color: #ededed !important;
+}
+.keypads-l-bg {
+  background-color: var(--secondary) !important;
+}
+.keys-l-bg {
+  background-color: #e4e4df !important;
+}
+.keys-l-color {
+  color: #3f3f3a !important;
+}
+.btn-l-bg {
+  background-color: #248487 !important;
+}
+
+/* Dark */
+.dark {
+  background-color: #21002f !important;
+}
+.themeToggle-d-bg {
+  background-color: var(--secondary-dark) !important;
+  transform: translateX(41px) !important;
+}
+.screen-d-bg {
+  background-color: var(--secondary-dark) !important;
+}
+.keypads-d-bg {
+  background-color: var(--secondary-dark) !important;
+}
+.keys-d-bg {
+  background-color: #3c0551 !important;
+  box-shadow: 0px 4px 2px 0 #60107f !important;
+}
+.keys-d-color {
+  color: #feec42 !important;
+}
+.btn-d-bg {
+  background-color: #61007c !important;
+  box-shadow: 0px 4px 2px 0 #4668c7 !important;
+}
+.equalBtn-d {
+  background-color: #00e9d0 !important;
+  box-shadow: 0px 4px 2px 0 #fff !important;
+}
+/* End of custom css class styles */
+.fs-big {
+  font-size: 3rem !important;
+}
+.screen-bg {
+  background: #181f32 !important;
+}
+.overflow-y {
+  overflow-y: hidden !important;
+}
+
+.keypads-bg {
+  background: #252d44 !important;
+}
+.col-3 button {
+  color: #252d44;
+  box-shadow: 0px 4px 2px 0 rgb(174, 172, 172);
+}
+#delBtn,
+#reset {
+  background: #647299;
+  box-shadow: 0px 4px 2px 0 #3e4968;
+}
+button[type="submit"]:active,
+#delBtn:active,
+#reset:active,
+.col-3 button:active {
+  box-shadow: 0 0 0 0 !important;
+}
+.box-shadow-small {
+  box-shadow: 0px 4px 2px 0 rgb(150, 78, 78);
+}

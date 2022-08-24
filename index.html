@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator Project</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper p-4">
+        <div class="d-flex justify-content-between align-items-baseline mb-2">
+          <div class="text-white fw-bold textColor">
+            <h4>Calc</h4>
+          </div>
+          <div class="d-flex align-items-end text-white textColor">
+              <span class=" text-uppercase  fs-7">Theme</span>
+              <div class="ms-3">
+                <div class="d-flex justify-content-between align-items-center" id="themeBtnsContainer">
+                  <button class="border-0 bg-transparent fs-7 fw-bold text-white textColor" data-color="default">1</button>
+                  <button class="border-0 bg-transparent fs-7 fw-bold text-white textColor" data-color="light">2</button>
+                  <button class="border-0 bg-transparent fs-7 fw-bold text-white textColor" data-color="dark">3</span>
+                </div>
+                <div class="position-relative h-20 bg-theme rounded-pill w-100 d-flex align-items-center">
+                  <span class=" position-absolute w-16 h-16 border-0 rounded-circle defaultThemeSpace transitions" id="theme"></span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+        <div class="container-fluid px-0 border rounded border-0 screen-bg d-flex align-items-center mb-4 h-auto screen-h position-relative" id="screen" >
+          <span class="fs-5 text-danger text-uppercase p-4 font-monospace w-100 text-end d-none text-end" id="error">Invalid math operation</span>
+          <span class="fs-1 fw-bold px-4 text-white textColor text-break w-100 text-end position-absolute top-0 hideResult transitions" id="result" ></span>
+          <span class="fs-big fw-bold px-4 text-white textColor text-break w-100 text-end" id="inputWrapper"></span>
+        </div>
+        <div class="container-fluid px-0 keypads-bg" id="keypads">
+          <div class="container p-4">
+            <div class="row gx-4 text-center">
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">7</button>
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">8</button>
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">9</button> 
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold text-white" id="delBtn">DEL</button>
+              </div>
+            </div>
+            <div class="row gx-4 my-4 text-center">
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">4</button>
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">5</button></div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">6</button> 
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads operators">+</button>
+              </div>
+            </div>
+            <div class="row gx-4 my-4">
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">1</button>
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">2</button></div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">3</button> 
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads operators">-</button>
+              </div>
+            </div>
+            <div class="row gx-4 my-4">
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">.</button>
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads">0</button></div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads operators">/</button> 
+              </div>
+              <div class="col-3">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold keypads operators">*</button>
+              </div>
+            </div>
+            <div class="row gx-4 mt-4 text-center">
+              <div class="col">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold text-white" id="reset">RESET</button> 
+              </div>
+              <div class="col ">
+                <button class="w-100 py-2 border-0 rounded fs-4 fw-semibold box-shadow-small bg-danger text-white" type="submit">=</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
