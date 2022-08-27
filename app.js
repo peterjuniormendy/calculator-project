@@ -5,13 +5,12 @@ const equalsToBtn = document.querySelector("button[type='submit']");
 const deleteBtn = document.querySelector("#delBtn");
 const resetBtn = document.querySelector("#reset");
 const screen = document.querySelector("#screen");
-const textToColor = document.querySelectorAll(".textColor");
+const textToColor = document.querySelectorAll(".text-color");
 const themeBtns = document.querySelectorAll("#themeBtnsContainer button");
 const themeToggleSpace = document.querySelector("#theme");
 const keypadsWrapper = document.querySelector("#keypads");
 const resultWrapper = document.querySelector("#result");
 const errorMessage = document.querySelector("#error");
-let colorTheme;
 
 loadTheme();
 
@@ -77,14 +76,15 @@ function resetFunction() {
 // THEME FUNCTIONALITY FUNCTIONS
 function loadTheme() {
   fetchTheme();
-  setTheme(colorTheme);
+  setTheme(fetchTheme());
 }
 
 function fetchTheme() {
-  colorTheme = localStorage.getItem("color");
+  let colorTheme = localStorage.getItem("color");
   if (!colorTheme) {
     colorTheme = "default";
   }
+  return colorTheme;
 }
 
 function toggleTheme(event) {
