@@ -40,7 +40,7 @@ body {
   transform: translateY(0) !important;
   opacity: 1;
 }
-.defaultThemeSpace {
+.default-theme-space {
   transform: translateX(2px) !important;
   background-color: red;
 }

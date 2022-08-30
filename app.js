@@ -1,6 +1,6 @@
 const body = document.body;
 const keypads = document.querySelectorAll(".keypads");
-const calcScreen = document.querySelector("#inputWrapper");
+const calcScreen = document.querySelector("#input-wrapper");
 const equalsToBtn = document.querySelector("button[type='submit']");
 const deleteBtn = document.querySelector("#delBtn");
 const resetBtn = document.querySelector("#reset");
@@ -22,13 +22,21 @@ equalsToBtn.addEventListener("click", evaluateInput);
 deleteBtn.addEventListener("click", deleteFunction);
 resetBtn.addEventListener("click", resetFunction);
 
+document.addEventListener("keydown", (e) => {
+  if (calcScreen.textContent == 0) {
+    calcScreen.textContent = e.key;
+  } else {
+    calcScreen.textContent += e.key;
+    resultWrapper.classList.remove("showResult");
+  }
+});
+
 // CALCULATOR FUNCTIONALITY FUNCTIONS
 function initializeValue(value) {
   calcScreen.textContent = value;
   resultWrapper.classList.remove("showResult");
 }
 
-let operators = document.querySelectorAll(".operators");
 function getInput(e) {
   if (calcScreen.textContent == 0) {
     calcScreen.textContent = e.target.textContent;
@@ -45,6 +53,13 @@ function evaluateInput() {
   ) {
     errorMessage.classList.remove("d-none");
     calcScreen.classList.add("d-none");
+  } else if (
+    "/".includes(calcScreen.textContent[calcScreen.textContent.length - 2]) &&
+    "0".includes(calcScreen.textContent[calcScreen.textContent.length - 1])
+  ) {
+    resultWrapper.textContent = calcScreen.textContent;
+    resultWrapper.classList.add("showResult");
+    return (calcScreen.textContent = 0);
   } else {
     evaluate();
   }
@@ -114,7 +129,7 @@ function toggleClass(element, cls1, cls2) {
 
 function lightTheme(el) {
   styleBody(el);
-  themeToggleSpace.classList.remove("defaultThemeSpace", "themeToggle-d-bg");
+  themeToggleSpace.classList.remove("default-theme-space", "themeToggle-d-bg");
   themeToggleSpace.classList.add("themeToggle-l-bg");
   screen.classList.remove("screen-bg", "screen-d-bg");
   screen.classList.add("screen-l-bg");
@@ -136,7 +151,7 @@ function lightTheme(el) {
 }
 function darkTheme(el) {
   styleBody(el);
-  themeToggleSpace.classList.remove("themeToggle-l-bg", "defaultThemeSpace");
+  themeToggleSpace.classList.remove("themeToggle-l-bg", "default-theme-space");
   themeToggleSpace.classList.add("themeToggle-d-bg");
 
   screen.classList.remove("screen-bg", "screen-l-bg");
@@ -162,7 +177,7 @@ function darkTheme(el) {
 function defaultTheme(el) {
   styleBody(el);
   themeToggleSpace.classList.remove("themeToggle-l-bg", "themeToggle-d-bg");
-  themeToggleSpace.classList.add("defaultThemeSpace");
+  themeToggleSpace.classList.add("default-theme-space");
 
   screen.classList.remove("screen-d-bg", "screen-l-bg");
   screen.classList.add("screen-bg");
